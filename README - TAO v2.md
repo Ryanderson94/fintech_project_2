@@ -1,1 +1,0 @@
-# fintech_project_2
