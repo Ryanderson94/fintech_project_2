@@ -1,4 +1,6 @@
-# there are 2 new models: Webcocket & time which look no pip install required
+"""This is the algorithm leveraging the Support Vector Machine supervised learning method"""
+
+# Install required libraries
 import time
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
