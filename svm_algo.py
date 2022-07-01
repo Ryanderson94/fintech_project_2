@@ -39,10 +39,6 @@ while True:
     bars['actual_returns'] = bars['close'].pct_change()
     bars = bars.dropna()
     
-    # Extract today's OHLV min df from Alpaca
-    bars_trading = api.get_bars(stock, TimeFrame.Minute, today, today).df
-    bars_trading = bars_trading.dropna()
-    
     # Use ta-lib to calcualte the simple moving average (SMA)
     bars['sma_short_window'] = ta.SMA(bars['close'],timeperiod=sma_short_window)
     bars['sma_long_window'] = ta.SMA(bars['close'],timeperiod=sma_long_window)
@@ -52,16 +48,6 @@ while True:
 
     # Drop NaN values in columns
     bars = bars.dropna()
-
-    # Use ta-lib to calcualte simple moving average (SMA)
-    bars_trading['sma_short_window'] = ta.SMA(bars_trading['close'],timeperiod=sma_short_window)
-    bars_trading['sma_long_window'] = ta.SMA(bars_trading['close'],timeperiod=sma_long_window)
-    
-    bars_trading['RSI'] = ta.RSI(bars_trading['close'],timeperiod=RSI_time_period)
-    bars_trading['EMA'] = ta.RSI(bars_trading['close'],timeperiod=EMA_time_period)
-    
-    # Drop NaN values in columns
-    bars_trading = bars_trading.dropna()
 
     # Assign a copy of the technical variable columns to the Features dataframe and lag it
     X = bars[['sma_short_window', 'sma_long_window', 'RSI', 'EMA', ]].shift(shift_time).dropna().copy()
@@ -92,7 +78,7 @@ while True:
     
     # Copy the "signal" column to the target series called `y`
     y = bars['signal']
-   
+
     # Set the start and end of the training period
     training_begin = X.index.min()
     training_end = X.index.min() + DateOffset(minutes=periods_for_training_data)
@@ -100,7 +86,7 @@ while True:
     # Generate the X_train and y_train DataFrames
     X_train = X.loc[training_begin:training_end]
     y_train = y.loc[training_begin:training_end]
-   
+
     # Generate the X_test and y_test DataFrames
     X_test = X.loc[training_end:]
     y_test = y.loc[training_end:]
@@ -143,9 +129,6 @@ while True:
 
     # NEED COMMENT HERE
     contrarian_training_signal_predictions = training_signal_predictions * (-1)
-
-    # NEED COMMENT HERE
-    trading_signal_predictions = model.predict(X_trading_scaled)
 
     # Create a predictions DataFrame
     predictions_df = pd.DataFrame(index=X_test.index)
@@ -191,4 +174,3 @@ while True:
     api.submit_order(symbol=stock,qty=1,side=side,type='market',time_in_force='gtc')
     time.sleep(60)
     api.submit_order(symbol=stock,qty=1,side=side_reverse,type='market',time_in_force='gtc')
-
