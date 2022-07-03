@@ -159,7 +159,8 @@ def word_cloud(text):
 
 print('Wordcloud for ' + ticker_or_stock_name)
 word_cloud(news_df['Summary'].values)
-    
+
+# Ryan put this into the streamlit
     #review of article data
 
     review_articles = input("Would you like to review the data used for the analysis: Yes or No  ").lower()
@@ -199,7 +200,8 @@ word_cloud(news_df['Summary'].values)
         continue
     else:
         break
-    
+
+# Ryan put this into the streamlit
 trade = input("Do you want to export this ticker to the Trading Bot to trade:  Yes or No  ").lower()
 ticker = input("Please input ticker symbol:  ").lower()
         
