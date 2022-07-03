@@ -99,9 +99,9 @@ def percentage(part, whole, news_df):
         news_list.append(news)
         analyzer = SentimentIntensityAnalyzer().polarity_scores(news)
         neg = analyzer['neg']
-        neu = analyzer['neu']
+        neu = analyzer['neu'] # Maybe we can remove this
         pos = analyzer['pos']
-        comp = analyzer['compound']
+        comp = analyzer['compound']  # Maybe we can remove this
 
         if neg > pos:
             negative_list.append(news)  # appending the news that satisfies this condition
@@ -130,7 +130,7 @@ def percentage(part, whole, news_df):
 
     return 100 * float(part) / float(whole), positive_list, negative_list, neutral_list
     
-
+# CAN THIS BE A GRAPHICAL OUTPUT IN THE STREAMLIT APPLICATION?
 # D- PieChart creation & word cloud visualiztion
 def pie_chart_data(positive, negative, neutral):
     labels = ['Positive [' + str(round(positive)) + '%]', 'Neutral [' + str(round(neutral)) + '%]',
@@ -145,7 +145,7 @@ def pie_chart_data(positive, negative, neutral):
     plt.show()
 
 # word cloud visualization
-def word_cloud(text):
+def word_cloud(text, news_df):
     stopwords = set(STOPWORDS)
     allWords = ' '.join([nws for nws in text])
     wordCloud = WordCloud(background_color='black', width=1000, height=500, stopwords=stopwords, min_font_size=20,
@@ -156,9 +156,8 @@ def word_cloud(text):
     fig.tight_layout(pad=0)
     plt.show()
 
-
-print('Wordcloud for ' + ticker_or_stock_name)
-word_cloud(news_df['Summary'].values)
+    print('Wordcloud for ' + ticker_or_stock_name)
+    word_cloud(news_df['Summary'].values)
 
 # Ryan put this into the streamlit
     #review of article data
