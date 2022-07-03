@@ -43,7 +43,7 @@ def run_trading_bot(
     ):
     
     # Define alpaca api object 
-    bars = api.get_bars("SPY", TimeFrame.Minute, start_date_historical, end_date_historical).df
+    bars = api.get_bars(stock, TimeFrame.Minute, start_date_historical, end_date_historical).df
 
     bars["actual_returns"] = bars["close"].pct_change()
 
