@@ -1,11 +1,12 @@
 """This is the streamlit input application"""
 
 # Import required libraries
+from datetime import date
 import streamlit as st
 import pandas as pd
 import numpy as np # np mean, np random 
 import yfinance as yf
-####### (cant make this work for the life of me) from sentiment_analysis_copy import date_formatter, news_scraper, percentage, pie_chart_data, word_cloud
+from sentiment_analysis_copy import date_formatter, news_scraper, percentage, pie_chart_data, word_cloud
 
 st.title("**Welcome to the AutoTrader Pro**")
 st.header("A Powerful Tool for Empowering Investors")
@@ -22,6 +23,16 @@ else:
 
 if ticker != "":
     st.markdown(f'You entered the stock ticker : {ticker}')
+
+now = date_formatter()[0]
+yesterday = date_formatter()[1]
+config = date_formatter()[2]
+
+news_scraper(now, yesterday, ticker, config)
+# This function should return a dataframe and we need to figure out how to pass it into the function below
+percentage(part=.5, whole=1, '''This is where the dataframe from the above needs to go''')
+
+st.display(percentage()[1])
 
 postscreen = st.radio(
      "Would you like to review an additional stock?",
