@@ -26,11 +26,11 @@ def date_formatter():
     config.browser_user_agent = user_agent
     config.request_timeout = 10
 
-    return now, yesterday
+    return now, yesterday, config
 
 
 # Extract News with Google News
-def news_scraper(yesterday, now):
+def news_scraper(yesterday, now, ticker_or_stock_name, config):
     googlenews = GoogleNews(start = yesterday, end = now)
     googlenews.search(ticker_or_stock_name)
     result = googlenews.result()
