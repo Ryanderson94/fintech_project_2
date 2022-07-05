@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import hvplot.pandas
 import datetime as dt
 import nltk
+import streamlit as st
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from GoogleNews import GoogleNews
 from newspaper import Article
@@ -30,6 +31,7 @@ def date_formatter():
 
 
 # Extract News with Google News
+@st.cache
 def news_scraper(yesterday, now, ticker_or_stock_name, config):
     googlenews = GoogleNews(start = yesterday, end = now)
     googlenews.search(ticker_or_stock_name)
@@ -69,12 +71,12 @@ def news_scraper(yesterday, now, ticker_or_stock_name, config):
         print("exception occurred:" + str(e))
         print("Looks like, there is some error in retrieving the data, Please try again or try with a different ticker." )
 
-    return df, news_df
+    return news_df
 
 
 # C- Sentiment Analysis categorization of selected News articles into sentiment buckets
 
-def percentage(part, whole, news_df):
+def percentage(news_df):
 
     # Assigning Initial Values
     positive = 0
@@ -105,9 +107,9 @@ def percentage(part, whole, news_df):
             neutral_list.append(news)  # appending the news that satisfies this condition
             neutral += 1  # increasing the count by 1
 
-    positive = percentage(positive, len(news_df))  # percentage is the function defined above
-    negative = percentage(negative, len(news_df))
-    neutral = percentage(neutral, len(news_df))
+    ###positive = percentage(positive, len(news_df))  # percentage is the function defined above
+    ###negative = percentage(negative, len(news_df))
+    ###neutral = percentage(neutral, len(news_df))
 
     # Converting lists to pandas dataframe
     news_list = pd.DataFrame(news_list)
@@ -120,7 +122,7 @@ def percentage(part, whole, news_df):
     print("Neutral Sentiment:", '%.2f' % len(neutral_list), end='\n')
     print("Negative Sentiment:", '%.2f' % len(negative_list), end='\n')
 
-    return 100 * float(part) / float(whole), positive_list, negative_list, neutral_list
+    return positive_list, neutral_list, negative_list
     
 # CAN THIS BE A GRAPHICAL OUTPUT IN THE STREAMLIT APPLICATION?
 # D- PieChart creation & word cloud visualiztion
