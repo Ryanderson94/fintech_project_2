@@ -182,14 +182,3 @@ def word_cloud(text, news_df):
         print(""" PLEASE NOTE, Our Proprietary Trading Algorithm can trade all these short term trading opportunites based on the Stock News Sentiment Analysis on your behalf. 
                                                         BEST Of LUCK TRADING! """)   
         print("")
-        
-    # request to look at another ticker or Company    
-
-# Ryan put this into the streamlit
-trade = input("Do you want to export this ticker to the Trading Bot to trade:  Yes or No  ").lower()
-ticker = input("Please input ticker symbol:  ").lower()
-        
-if trade == "yes":
-    print(f"Exporting {ticker} to Trading Bot")
-else:
-    print("no")
