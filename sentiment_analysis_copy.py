@@ -126,7 +126,7 @@ def percentage(news_df):
     
 # CAN THIS BE A GRAPHICAL OUTPUT IN THE STREAMLIT APPLICATION?
 # D- PieChart creation & word cloud visualiztion
-def pie_chart_data(positive, negative, neutral):
+def pie_chart_data(positive, negative, neutral, ticker_or_stock_name):
     labels = ['Positive [' + str(round(positive)) + '%]', 'Neutral [' + str(round(neutral)) + '%]',
                 'Negative [' + str(round(negative)) + '%]']
     sizes = [positive, neutral, negative]

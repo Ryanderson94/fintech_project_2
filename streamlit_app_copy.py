@@ -41,6 +41,8 @@ def main():
     df1 = news_scraper(now, yesterday, asset, config)
     positive_list, neutral_list, negative_list = percentage(df1)
     st.write(positive_list, neutral_list, negative_list)
+    pie = pie_chart_data((len(positive_list)),(len(negative_list)),(len(neutral_list)), asset)
+    st.write(pie)
     title.title(components.loc[asset].Security)
     if st.sidebar.checkbox('Would you like to review additional company data?'):
         start = st.date_input("Please enter the date you would like to begin your analysis")
@@ -53,11 +55,7 @@ def main():
 if __name__ == '__main__':
     main()
 
-"""postscreen = st.radio(
-     "Would you like to review an additional stock?",
-     ('Yes', 'No'))
-
 amount  = st.number_input('Enter the amount you would like to trade', min_value=0, value=0)
 
 if amount != 0:
-    st.markdown(f'You entered the desired trade amount : ${amount}')"""
+    st.markdown(f'You entered the desired trade amount : ${amount}')
