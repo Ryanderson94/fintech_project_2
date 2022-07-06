@@ -35,13 +35,13 @@ def main():
     asset = st.sidebar.selectbox('Fortune 500 Companies',
                                  components.index.sort_values(), index=3,
                                  format_func=label)
-    test = components.astype(str)
-    st.dataframe(test.loc[asset])
-    if st.sidebar.checkbox('Would you like to view more information about the options?'):
+    if st.sidebar.checkbox('Would you like to view more information about potential stocks?'):
         st.dataframe(components[['Security',
                                  'GICS Sector',
                                  'Date first added',
                                  'Founded']])
+    test = components.astype(str)
+    st.dataframe(test.loc[asset])
     
     # Define DF1
     df1 = news_scraper(now, yesterday, asset, config)
@@ -69,7 +69,7 @@ def main():
     st.image(wordcloud_diagram.to_array())
 
     title.title(components.loc[asset].Security)
-    if st.sidebar.checkbox('Would you like to review additional company data?'):
+    if st.sidebar.checkbox('Would you like to review historical stock pricing data about this firm?'):
         start = st.date_input("Please enter the date you would like to begin your analysis")
         end = st.date_input('Please select the date you would like to end your analysis window', value = pd.to_datetime('today'))
         df = yf.download(asset,start,end)['Adj Close']
