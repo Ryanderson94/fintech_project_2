@@ -109,8 +109,6 @@ def run_trading_bot(
         X_train_scaled = X_scaler.transform(X_train)
         
         X_test_scaled = X_scaler.transform(X_test)
-        
-        X_trading_scaled = X_scaler.transform(X_trading)
 
         from imblearn.over_sampling import RandomOverSampler
         
