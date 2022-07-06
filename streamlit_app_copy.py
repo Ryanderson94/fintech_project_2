@@ -81,10 +81,8 @@ def main():
 
     if amount != 0:
         st.markdown(f'We will begin trading ${amount} worth of {asset}.')
-
-
-stock, shift_time, start_date_historical, end_date_historical, periods_for_training_data, sma_short_window, sma_long_window, RSI_time_period, EMA_time_period = define_hyper_parameters(asset)
-run_trading_bot(stock, shift_time, start_date_historical, end_date_historical, periods_for_training_data, sma_short_window, sma_long_window, RSI_time_period, EMA_time_period)
+        stock, shift_time, start_date_historical, end_date_historical, periods_for_training_data, sma_short_window, sma_long_window, RSI_time_period, EMA_time_period = define_hyper_parameters(asset)
+        run_trading_bot(stock, shift_time, start_date_historical, end_date_historical, periods_for_training_data, sma_short_window, sma_long_window, RSI_time_period, EMA_time_period)
     
 
 if __name__ == '__main__':
