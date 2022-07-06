@@ -35,6 +35,8 @@ def main():
     asset = st.sidebar.selectbox('Fortune 500 Companies',
                                  components.index.sort_values(), index=3,
                                  format_func=label)
+    test = components.astype(str)
+    st.dataframe(test.loc[asset])
     if st.sidebar.checkbox('Would you like to view more information about the options?'):
         st.dataframe(components[['Security',
                                  'GICS Sector',
@@ -73,7 +75,6 @@ def main():
         df = yf.download(asset,start,end)['Adj Close']
         st.subheader(f'Historical Adjusted Close Price for {asset} from {start} to {end}')
         st.line_chart(df)
-        #st.table(components.loc[asset])
     
     amount  = st.number_input('Enter the amount you would like to trade', min_value=0, value=0)
 
