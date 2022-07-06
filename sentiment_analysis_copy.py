@@ -10,6 +10,7 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from GoogleNews import GoogleNews
 from newspaper import Article
 from newspaper import Config
+from sympy import true
 from wordcloud import WordCloud, STOPWORDS
 import yahoo_fin.stock_info as si
 nltk.download("vader_lexicon")
@@ -107,10 +108,6 @@ def percentage(news_df):
             neutral_list.append(news)  # appending the news that satisfies this condition
             neutral += 1  # increasing the count by 1
 
-    ###positive = percentage(positive, len(news_df))  # percentage is the function defined above
-    ###negative = percentage(negative, len(news_df))
-    ###neutral = percentage(neutral, len(news_df))
-
     # Converting lists to pandas dataframe
     news_list = pd.DataFrame(news_list)
     neutral_list = pd.DataFrame(neutral_list, columns=['Neutral News Articles'])
@@ -122,67 +119,39 @@ def percentage(news_df):
     print("Neutral Sentiment:", '%.2f' % len(neutral_list), end='\n')
     print("Negative Sentiment:", '%.2f' % len(negative_list), end='\n')
 
-    return positive_list, neutral_list, negative_list
+    return positive_list, neutral_list, negative_list, positive, neutral, negative
     
-# CAN THIS BE A GRAPHICAL OUTPUT IN THE STREAMLIT APPLICATION?
 # D- PieChart creation & word cloud visualiztion
-def pie_chart_data(positive, negative, neutral, ticker_or_stock_name):
-    labels = ['Positive [' + str(round(positive)) + '%]', 'Neutral [' + str(round(neutral)) + '%]',
-                'Negative [' + str(round(negative)) + '%]']
-    sizes = [positive, neutral, negative]
-    colors = ['yellowgreen', 'blue', 'red']
-    patches, text = plt.pie(sizes, colors=colors, startangle=90)
-    plt.style.use('default')
-    plt.legend(labels)
-    plt.title("Sentiment Analysis Result for stock= " + ticker_or_stock_name + "")
-    plt.axis('equal')
-    plt.show()
+def pie_chart_data(positive, negative, neutral):
+    if neutral !=0:
+        labels = ['Positive', 'Neutral', 'Negative']
+        explode = (0.1, 0, 0)
+        sizes = [positive, neutral, negative]
+        colors = ['yellowgreen', 'blue', 'red']
+    else:
+        labels = ['Positive', 'Negative']
+        explode = (0.1, 0)
+        sizes = [positive, negative]
+        colors = ['yellowgreen', 'red']
+    patches, ax1 = plt.subplots()
+    ax1.pie(
+        sizes,
+        labels = labels,
+        colors=colors,
+        explode=explode,
+        shadow=True,
+        autopct='%1.1f%%', 
+        startangle=90
+        )
+    ax1.axis('equal')
 
-    return patches, text
+    return patches
 
 # word cloud visualization
-def word_cloud(text, news_df):
+def word_cloud(text):
     stopwords = set(STOPWORDS)
     allWords = ' '.join([nws for nws in text])
     wordCloud = WordCloud(background_color='black', width=1000, height=500, stopwords=stopwords, min_font_size=20,
                             max_font_size=150, colormap='prism').generate(allWords)
-    fig, ax = plt.subplots(figsize=(20, 10), facecolor='k')
-    plt.imshow(wordCloud)
-    ax.axis("off")
-    fig.tight_layout(pad=0)
-    plt.show()
 
-    print('Wordcloud for ' + ticker_or_stock_name)
-    word_cloud(news_df['Summary'].values)
-
-# Ryan put this into the streamlit
-    #review of article data
-
-    review_articles = input("Would you like to review the data used for the analysis: Yes or No  ").lower()
-    
-
-    if review_articles == "yes":
-        print(news_df)
-        print("")
-        
-    #Investment Advise utilzing the Sentiment Analysis
-    
-    advise = input("Would you like advice on how this Sentiment Analysis can be applied to your trading?: Yes or No  ").lower()
-    
-    if advise == "yes":
-        ticker = input("Please input ticker symbol:  ").lower()
-        analyst = si.get_quote_table(ticker)
-        analyst_df = pd.DataFrame.from_dict(analyst, orient = "index")
-        print("")
-        print("""FOR POSITIVE SENTIMENT: Look for current price near support levels; For example near the 52 Week Range lows or the Day's Range lower bounds for bounces 
-                    or Breakout approve those levels supported by volume for short term long trading oportunites.   """)
-        print("")
-        print("""FOR NEGATIVE SENTIMENT: Look for current price near resistance levels; For example near the 52 Week Range high or the Day's Range upper bounds for drops 
-                    or Breakout below those levels supported by volume for short term short trading oportunites.   """)
-        print("")
-        print (f"Current Financial Metrics for your reference: {analyst_df}") 
-
-        print("")
-        print(""" PLEASE NOTE, Our Proprietary Trading Algorithm can trade all these short term trading opportunites based on the Stock News Sentiment Analysis on your behalf. 
-                                                        BEST Of LUCK TRADING! """)   
-        print("")
+    return wordCloud
