@@ -54,6 +54,7 @@ The AutoTrader Pro utilizes **Python (v 3.9.7)** and the following libraries (in
 29. `Article, Config from newspaper`
 30. `WordCloud, STOPWORDS from wordcloud`
 31. `yahoo_fin.stock_info as si`
+32. `streamlit as st`
 
 ---
 
@@ -69,12 +70,11 @@ A large majority of the libraries are included with the Python version above. Al
 
 Please use the following table of contents for reference:
 
-1. [Sentiment Analysis](./sentiment_analysis.ipynb)
+1. [Sentiment Analysis](./sentiment_analysis.py)
 2. [Neural Network](./Trading_Bot_Deep_nn_loop_bot_connected.ipynb)
 3. [SVM](./Trading_Bot_SVM_TA_v2_loop.ipynb)
 4. [Streamlit](./streamlit_app.py)
-5. [Streamlit Sentiment Analysis](./sentiment_analysis_copy.py)
-6. [Streamlit Neural Network Algo](./nn_algo.py)
+5. [Streamlit Neural Network Algo](./nn_algo.py)
     
 ---
 
@@ -83,6 +83,8 @@ Please use the following table of contents for reference:
 A new feature of the AutoTrader Bot is the Sentiment Analysis. Our sentiment analysis, powered by MLTK Vader, gauges the sentiment of the market regarding the particular stock the user has selected using NLP analysis. With this information, the user will be better informed before placing a trade.
 
 The data collection utilizes the GoogleNews API to fetch the first 10 articles relating to the ticker. The data is parsed and categorized into the applicable sentiment categories which are Positive, Negative and Neutral and visualized for the user in a pie chart and a word cloud as a reference on the current sentiment of the ticker.
+
+![sentiment](url)
 
 With this information, the user can decide if they would like the AutoTrader to execute trades. If the selection is yes, the ticker is passed on to the Trading Bot where the magic starts.
 
