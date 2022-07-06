@@ -84,7 +84,7 @@ A new feature of the AutoTrader Bot is the Sentiment Analysis. Our sentiment ana
 
 The data collection utilizes the GoogleNews API to fetch the first 10 articles relating to the ticker. The data is parsed and categorized into the applicable sentiment categories which are Positive, Negative and Neutral and visualized for the user in a pie chart and a word cloud as a reference on the current sentiment of the ticker.
 
-![sentiment](url)
+![sentiment](https://github.com/Ryanderson94/fintech_project_2/blob/main/Readme%20Resources/sentiment.PNG)
 
 With this information, the user can decide if they would like the AutoTrader to execute trades. If the selection is yes, the ticker is passed on to the Trading Bot where the magic starts.
 
