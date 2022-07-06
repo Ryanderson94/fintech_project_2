@@ -18,14 +18,14 @@ alpaca_secret_key = get_alpacas_info()[2]
 
 # use timedelta from Datetime to generate earlier date so we can extract historical data from alpaca later
 
-def define_hyper_parameters():
+def define_hyper_parameters(asset):
     days_to_subtract = 7
     today = (datetime.today()).strftime('%Y-%m-%d')
 
     earlier_date_to_compare = (datetime.today()-timedelta(days=days_to_subtract)).strftime('%Y-%m-%d')
 
     # Define parameters for the algorithm
-    stock = 'SPY'                                       # Stock ticker
+    stock = asset                                     # Stock ticker
     shift_time = 1                                      # Offset shift
     start_date_historical = earlier_date_to_compare     # Historical start date
     end_date_historical = today                         # Historical end date

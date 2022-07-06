@@ -8,6 +8,7 @@ import pandas as pd
 import numpy as np # np mean, np random 
 import yfinance as yf
 from sentiment_analysis_copy import date_formatter, news_scraper, percentage, pie_chart_data, word_cloud
+from svm_algo import define_hyper_parameters, run_trading_bot
 
 st.title("**Welcome to the AutoTrader Pro**")
 st.header("A Powerful Tool for Empowering Investors")
@@ -80,6 +81,10 @@ def main():
 
     if amount != 0:
         st.markdown(f'We will begin trading ${amount} worth of {asset}.')
+
+
+stock, shift_time, start_date_historical, end_date_historical, periods_for_training_data, sma_short_window, sma_long_window, RSI_time_period, EMA_time_period = define_hyper_parameters(asset)
+run_trading_bot(stock, shift_time, start_date_historical, end_date_historical, periods_for_training_data, sma_short_window, sma_long_window, RSI_time_period, EMA_time_period)
     
 
 if __name__ == '__main__':
