@@ -113,9 +113,9 @@ def percentage(news_df):
 
     # Converting lists to pandas dataframe
     news_list = pd.DataFrame(news_list)
-    neutral_list = pd.DataFrame(neutral_list)
-    negative_list = pd.DataFrame(negative_list)
-    positive_list = pd.DataFrame(positive_list)
+    neutral_list = pd.DataFrame(neutral_list, columns=['Neutral News Articles'])
+    negative_list = pd.DataFrame(negative_list, columns=['Negative News Articles'])
+    positive_list = pd.DataFrame(positive_list, columns=['Positive News Articles'])
 
     # using len(length) function for counting
     print("Positive Sentiment:", '%.2f' % len(positive_list), end='\n')
@@ -131,12 +131,14 @@ def pie_chart_data(positive, negative, neutral, ticker_or_stock_name):
                 'Negative [' + str(round(negative)) + '%]']
     sizes = [positive, neutral, negative]
     colors = ['yellowgreen', 'blue', 'red']
-    patches, texts = plt.pie(sizes, colors=colors, startangle=90)
+    patches, text = plt.pie(sizes, colors=colors, startangle=90)
     plt.style.use('default')
     plt.legend(labels)
     plt.title("Sentiment Analysis Result for stock= " + ticker_or_stock_name + "")
     plt.axis('equal')
     plt.show()
+
+    return patches, text
 
 # word cloud visualization
 def word_cloud(text, news_df):
