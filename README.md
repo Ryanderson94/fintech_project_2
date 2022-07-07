@@ -1,7 +1,5 @@
 # The AutoTrader Pro
 
-![AutoTrader](https://github.com/Ryanderson94/fintech_project_1/blob/main/Readme%20Resources/Capture.PNG)
-
 ## Overview & Features
 Fueled by our success following the deployment of the AutoTrader, we have engineered a scalable, adaptable, and succesfull iteration of the orginal AutoTrader dubbed: "The AutoTrader Pro". The Pro version is for users with more knowledge about trading and who have more time than those who use the regular AutoTrader. But what makes the AutoTrader Pro truly different from the original?
 
