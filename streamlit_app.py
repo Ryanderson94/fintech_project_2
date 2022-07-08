@@ -7,7 +7,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np # np mean, np random 
 import yfinance as yf
-from sentiment_analysis_copy import date_formatter, news_scraper, percentage, pie_chart_data, word_cloud
+from sentiment_analysis import date_formatter, news_scraper, percentage, pie_chart_data, word_cloud
 from svm_algo import define_hyper_parameters, run_trading_bot
 
 st.title("**Welcome to the AutoTrader Pro**")
