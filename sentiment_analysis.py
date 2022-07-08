@@ -36,6 +36,7 @@ def date_formatter():
 def news_scraper(yesterday, now, ticker_or_stock_name, config):
     googlenews = GoogleNews(start = yesterday, end = now)
     googlenews.search(ticker_or_stock_name)
+    googlenews.get_page(2)
     result = googlenews.result()
 
     # Store the results
@@ -76,7 +77,6 @@ def news_scraper(yesterday, now, ticker_or_stock_name, config):
 
 
 # C- Sentiment Analysis categorization of selected News articles into sentiment buckets
-
 def percentage(news_df):
 
     # Assigning Initial Values
