@@ -86,7 +86,7 @@ A large majority of the libraries are included with the Python version above. Al
 
 3. **User Interface**: In designing a product to roll out to general consumers, we have to be cognizant of keeping the end user experience front and center in our design choices. We decided to utilize the Streamlit library to build an interactive financial dashboard to take in user inputs and put the power of our built-in tools in the hands of our customers. With Streamlit, we are able to offer users customizable data about a wealth of companies they might wish to invest in, connect and display innovative sentiment analysis to inform those choices, and fully integrate our AutoTrader Pro to place trades in real time directly from user inputs at the culmination of the app’s flow.
 
-https://files.slack.com/files-pri/T0346E0RFPH-F03NW9AKJHH/streamlit_gif.gif
+![Steam_App](./Images/Streamlit%20GIF.gif)
 
 
 **link to the Streamlit file**
