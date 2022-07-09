@@ -1,13 +1,13 @@
 # The AutoTrader Pro
 
 ## Overview & Features
-Fueled by our success following the deployment of the AutoTrader, we have enhance and included additional features to our original product and have  dubbed our new creation: "The AutoTrader Pro". The Pro version is more user friendly has all the necessary tools to help our user achieve their goals, which is to make money.
+Fueled by our success following the deployment of the AutoTrader, we have enhanced and included additional features to our original product and have  dubbed our new creation: "The AutoTrader Pro". The Pro version is more user friendly has all the necessary tools to help our users achieve their ultimate goal, which is to make money.
 
 This Application features the following upgrades:
 
 1. Sentiment Analysis using recent news on any ticker to gauge the current market's sentiment on that ticker.
-2. Proprietary Algorithmic Trading Bot powered by our Machine Learning Model.
-3. Intuitive, scalable, and adaptive UI for users to easily select their preferred stock and begin trading.
+2. Algorithmic Trading Bot powered by our Machine Learning Models.
+3. Intuitive and user friendly User Interface for customers to easily select their preferred stock and begin trading.
 
 
 ### NOTE
@@ -42,7 +42,7 @@ A large majority of the libraries are included with the Python version above. Al
 
     We then visualize this data in 3 different ways: Categorized tables, a pie chart, and even a word cloud to laser focus what specific words are driving the company’s news. All of this allows the customer to make informed trading decisions, which will actually happen under the purview of our next section which Tao will now share
 
-![Sentiment](./Images/Sentiment.jpg)
+>________________________________________![Sentiment](./Images/Sentiment.jpg)
 
 **link to the Sentiment Analysis file**
 
@@ -52,7 +52,7 @@ A large majority of the libraries are included with the Python version above. Al
 
 
 
-2. **Machine Learing**:  Most traders use multiple technical indicators to make trading decisions, But an issue with using multiple technical indicators for a trader is that there might be conflicting signals between indicators or they might miss a signal because there are to many indicators to keep track of. That is where our Algorithmic Trading Bot enhanced by our Machine Learning (ML) Models (SVM or Neural Network) comes into play:
+2. **Machine Learing**:  Most traders use multiple Technical Analysis indicators to make trading decisions, But an issue with using multiple indicators is that there might be conflicting signals between indicators or they might miss a signal because there are to many indicators to keep track of. That is where our Algorithmic Trading Bot enhanced by our Machine Learning (ML) Models (SVM or Neural Network) comes into play:
 
   * We have tested 2 ML models: Support Vector Machine (SVM) and Neural Networks (NN) with our application:      
         
