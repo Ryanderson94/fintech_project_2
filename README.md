@@ -63,7 +63,7 @@ A large majority of the libraries are included with the Python version above. Al
 
  
 
->___________________________________________________________________________________________________![Auto_Trader_Pro](./Images/Auto_Trader_process.jpg)
+___________________________________________________________________________________________________![Auto_Trader_Pro](./Images/Auto_Trader_process.jpg)
 
 
  >**Summarizing trading strategy:**
