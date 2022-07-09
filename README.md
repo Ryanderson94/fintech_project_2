@@ -6,8 +6,8 @@ Fueled by our success following the deployment of the AutoTrader, we have enhanc
 This Application features the following upgrades:
 
 1. Sentiment Analysis using recent news on any ticker to gauge the current market's sentiment on that ticker.
-2. Algorithmic Trading Bot powered by our Machine Learning Models.
-3. Intuitive and user friendly User Interface for customers to easily select their preferred stock and begin trading.
+2. Enhanced Algorithmic Trading Bot powered by our Machine Learning Models.
+3. User friendly UI for customers to easily research, select, and begin trading their preferred stock.
 
 
 ### NOTE
@@ -56,12 +56,6 @@ A large majority of the libraries are included with the Python version above. Al
 
   * We have tested 2 ML models: Support Vector Machine (SVM) and Neural Networks (NN) with our application:      
         
-    1.  SVM Models is one of the most robust & widely used models for classification prediction with high accuracy. 
-
-    2.  NN Models were more recently developed, it simulate how our brain works via neurons, it gives us the ability to incorporate the Kelly Criterion for placing trades. Which gives us the functionality to increase the size of our trades/ bets when the odds/signals are in our favor.
-
-
- 
 >![Auto_Trader_Pro](./Images/Auto_Trader_process.jpg)
 
 
