@@ -69,6 +69,14 @@ Majority of the above libraries should be part of the base applications that wer
   - Pass the “stock ticker”, “buy/sell signal”, “number of shares to execute” to the AutoTrader Pro to execute on the Alpaca trading account.
 
 
+
+  >**Machine Learning Backtesting Summary**
+
+  >![Backtesting_Results](./Images/backtesting.jpg)
+
+
+
+
 **link to the NN Algo & SVM Algo files**
 
 [NN_Algo](nn_algo.py)
