@@ -42,7 +42,7 @@ A large majority of the libraries are included with the Python version above. Al
 
     We then visualize this data in 3 different ways: Categorized tables, a pie chart, and even a word cloud to laser focus what specific words are driving the company’s news. All of this allows the customer to make informed trading decisions, which will actually happen under the purview of our next section which Tao will now share
 
->____________________________________________________________![Sentiment](./Images/Sentiment.jpg)_______________________________________________________________
+![Sentiment](./Images/Sentiment.jpg)
 
 **link to the Sentiment Analysis file**
 
