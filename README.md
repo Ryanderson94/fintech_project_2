@@ -14,7 +14,7 @@ This Application features the following upgrades:
 * A subscription to utilize Alpaca's Api is needed to run the AutoTrader Pro.
 * The AutoTrader Pro can only execute trades during market hours (9:30 AM - 4 PM).
 
-![Evollution_AT_Bot](./Images/Screenshot%202022-07-08%20185712.jpg)
+>![Evollution_AT_Bot](./Images/Screenshot%202022-07-08%20185712.jpg)
 
 ---
 
@@ -42,7 +42,7 @@ A large majority of the libraries are included with the Python version above. Al
 
     We then visualize this data in 3 different ways: Categorized tables, a pie chart, and even a word cloud to laser focus what specific words are driving the company’s news. All of this allows the customer to make informed trading decisions, which will actually happen under the purview of our next section which Tao will now share
 
-![Sentiment](./Images/Sentiment.jpg)
+>![Sentiment](./Images/Sentiment.jpg)
 
 **link to the Sentiment Analysis file**
 
@@ -62,7 +62,7 @@ A large majority of the libraries are included with the Python version above. Al
 
 
  
-![Auto_Trader_Pro](./Images/Auto_Trader_process.jpg)
+>![Auto_Trader_Pro](./Images/Auto_Trader_process.jpg)
 
 
  >**Summarizing trading strategy:**
@@ -85,7 +85,7 @@ A large majority of the libraries are included with the Python version above. Al
 
 3. **User Interface**: In designing a product to roll out to general consumers, we have to be cognizant of keeping the end user experience front and center in our design choices. We decided to utilize the Streamlit library to build an interactive financial dashboard to take in user inputs and put the power of our built-in tools in the hands of our customers. With Streamlit, we are able to offer users customizable data about a wealth of companies they might wish to invest in, connect and display innovative sentiment analysis to inform those choices, and fully integrate our AutoTrader Pro to place trades in real time directly from user inputs at the culmination of the app’s flow.
 
-![Steam_App](./Images/Streamlit%20GIF.gif)
+>![Steam_App](./Images/Streamlit%20GIF.gif)
 
 
 **link to the Streamlit file**
@@ -101,7 +101,7 @@ Upon succesful deployment of the AutoTrader Pro, we aim to create a Smart Contra
 
 Final deployment onto a real trading account will be the penultimate venture before our initial public offering.
 
-![Pipeline](./Images/Pipeline.jpg)
+>![Pipeline](./Images/Pipeline.jpg)
 
 ---
 
