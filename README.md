@@ -42,7 +42,7 @@ A large majority of the libraries are included with the Python version above. Al
 
     We then visualize this data in 3 different ways: Categorized tables, a pie chart, and even a word cloud to laser focus what specific words are driving the company’s news. All of this allows the customer to make informed trading decisions, which will actually happen under the purview of our next section which Tao will now share
 
->___________________________________________________________________________________________________________________![Sentiment](./Images/Sentiment.jpg)
+![Sentiment](./Images/Sentiment.jpg)
 
 **link to the Sentiment Analysis file**
 
@@ -62,8 +62,7 @@ A large majority of the libraries are included with the Python version above. Al
 
 
  
-
-___________________________________________________________________________________________________![Auto_Trader_Pro](./Images/Auto_Trader_process.jpg)
+![Auto_Trader_Pro](./Images/Auto_Trader_process.jpg)
 
 
  >**Summarizing trading strategy:**
@@ -102,7 +101,7 @@ Upon succesful deployment of the AutoTrader Pro, we aim to create a Smart Contra
 
 Final deployment onto a real trading account will be the penultimate venture before our initial public offering.
 
->____________________________________________________________________________________________________________________![Pipeline](./Images/Pipeline.jpg)
+![Pipeline](./Images/Pipeline.jpg)
 
 ---
 
