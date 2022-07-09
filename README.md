@@ -60,7 +60,7 @@ Majority of the above libraries should be part of the base applications that wer
 
 
  >**Summarizing our Trading Strategy:**
-  - Extracted min by min stock prices data from Alpaca API.
+  - Extract minute by minute stock price data from Alpaca API.
   - Use TA-Lib to calculate various technical indicators (SMA, EMA, RSI, Bollinger Bands etc).
   - Feed above technical indicators as inputs into SVM & NN models to determine direction of price.
   - Determine how many shares to execute.
