@@ -6,12 +6,12 @@ Fueled by our success following the deployment of the AutoTrader, we have enhanc
 This Application features the following upgrades:
 
 1. Sentiment Analysis using recent news on any ticker to gauge the current market's sentiment on that ticker.
-2. Enhanced Algorithmic Trading Bot powered by our Machine Learning Models.
+2. An enhanced Algorithmic Trading Bot powered by our Machine Learning Models.
 3. User friendly UI for customers to easily research, select, and begin trading their preferred stock.
 
 
 ### NOTE
-* A subscription to utilize Alpaca's Api is needed to run the AutoTrader Pro.
+* A subscription to utilize Alpaca's API is needed to run the AutoTrader Pro.
 * The AutoTrader Pro can only execute trades during market hours (9:30 AM - 4 PM).
 
 >![Evollution_AT_Bot](./Images/Screenshot%202022-07-08%20185712.jpg)
@@ -29,7 +29,7 @@ The AutoTrader Pro utilizes **Python (v 3.9.7)** and the following libraries (in
 
 ## Installation Guide
 
-A large majority of the libraries are included with the Python version above. All other libraries can be installed using the Pip Package Manager or using the Conda Forge method.
+Majority of the above libraries should be part of the base applications that were installed with the Python version above; if not, you will have to install them through the pip package manager of Python.
 
 [PIP Install Support Web Site](https://packaging.python.org/en/latest/tutorials/installing-packages/#ensure-you-can-run-python-from-the-command-line)
 
@@ -40,7 +40,7 @@ A large majority of the libraries are included with the Python version above. Al
 
 1. **Sentiment Analysis**:  In striving to improve the AutoTrader Bot, a key functionality we developed and implemented is our Sentiment Analysis. What does providing our customers with a Sentiment Analysis achieve? The market is a collection of participants who are driven by their primitive instincts of greed and fear. Our enhanced analysis gauges the sentiment of the market regarding the particular stock the user has selected using Natural Language Processing analysis powered by NLTK Vader Library; This analysis allows the user to extrapolate emotive trends that can induce pricing movement and profit. The data collection utilizes the GoogleNews API to fetch top articles relating to the user inputted ticker; the data is parsed and categorized into the applicable sentiment categories which are Positive, Negative and Neutral.
 
-    We then visualize this data in 3 different ways: Categorized tables, a pie chart, and even a word cloud to laser focus what specific words are driving the company’s news. All of this allows the customer to make informed trading decisions, which will actually happen under the purview of our next section which Tao will now share
+    We then visualize this data in 3 different ways: Categorized tables, a pie chart, and even a word cloud to laser focus what specific words are driving the company’s news. All of this allows the customer to make informed trading decisions.
 
 >![Sentiment](./Images/Sentiment.jpg)
 
@@ -52,14 +52,14 @@ A large majority of the libraries are included with the Python version above. Al
 
 
 
-2. **Machine Learing**:  Most traders use multiple Technical Analysis indicators to make trading decisions, But an issue with using multiple indicators is that there might be conflicting signals between indicators or they might miss a signal because there are to many indicators to keep track of. That is where our Algorithmic Trading Bot enhanced by our Machine Learning (ML) Models (SVM or Neural Network) comes into play:
+2. **Machine Learing**:  Most traders use multiple Technical indicators to make trading decisions; Issues traders encounter trying to keep track of numerous indicators are conflicting signals between indicators or missing signals because there are to many indicators to keep track of. That is where our Algorithmic Trading Bot enhanced by our Machine Learning (ML) Models (SVM or Neural Network) comes into play:
 
   * We have tested 2 ML models: Support Vector Machine (SVM) and Neural Networks (NN) with our application:      
         
 >![Auto_Trader_Pro](./Images/Auto_Trader_process.jpg)
 
 
- >**Summarizing trading strategy:**
+ >**Summarizing our Trading Strategy:**
   - Extracted min by min stock prices data from Alpaca API.
   - Use TA-Lib to calculate various technical indicators (SMA, EMA, RSI, Bollinger Bands etc).
   - Feed above technical indicators as inputs into SVM & NN models to determine direction of price.
@@ -93,7 +93,6 @@ A large majority of the libraries are included with the Python version above. Al
 
 Upon succesful deployment of the AutoTrader Pro, we aim to create a Smart Contract system to not only allow trading of CryptoCurrencies, but to create a verifiable Block Chain that the AutoTrader ecosystem will be fueled by.
 
-Final deployment onto a real trading account will be the penultimate venture before our initial public offering.
 
 >![Pipeline](./Images/Pipeline.jpg)
 
