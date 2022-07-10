@@ -22,7 +22,7 @@ This Application features the following upgrades:
 
 The AutoTrader Pro utilizes **Python (v 3.9.7)** and the following libraries (in no specific order):
 
-`1. os 2. alpaca_trade_api as tradeapi 3. ast 4. time 5. json 6. pandas as pd 7. numpy as np 8. load_dotenv from dotenv 9. requests 10. hvplot.pandas 11 sqlalchemy 12. tensorflow as tf 13. Tensorflow.keras.layers 14. Tensorflow.keras.models 15. Sklearn.model_selection 16. Sklearn.preprocessing 17.  alpaca_trade_api 18. talib as ta 19. websocket 20. plotly 21. Datetime 22. matplotlib.pyplot as plt 23. nltk.sentiment.vader 24. GoogleNews 25.  newspaper 26. wordcloud 27. yahoo_fin.stock_info  28. streamlit as st `
+`1. os 2. alpaca_trade_api as tradeapi 3. ast 4. time 5. json 6. pandas as pd 7. numpy as np 8. load_dotenv from dotenv 9. requests 10. hvplot.pandas 11 sqlalchemy 12. tensorflow as tf 13. Tensorflow.keras.layers 14. Tensorflow.keras.models 15. Sklearn.model_selection 16. Sklearn.preprocessing 17.  alpaca_trade_api 18. talib as ta 19. websocket 20. plotly 21. Datetime 22. matplotlib.pyplot as plt 23. nltk.sentiment.vader 24. GoogleNews 25.  newspaper 26. wordcloud 27. yahoo_fin.stock_info  28. streamlit as st 29. yfinance as yf `
 
 
 ---
